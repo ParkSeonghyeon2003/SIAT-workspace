@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>과제2. 로그인 폼</title>
+  <link rel="stylesheet" href="박성현_과제_loginForm.css">
+</head>
+
+<body>
+  <!-- 로그인 폼 시작 -->
+  <form action="login" method="post">
+    <!-- 이미지 컨테이너 -->
+    <div class="imgcontainer">
+      <img src="../img/kead_logo.svg" alt="Logo" class="logo">
+    </div>
+
+    <!-- 입력 컨테이너 -->
+    <div class="container">
+      <!-- 아이디 입력 필드 -->
+      <label for="user_name"><b>아이디</b></label>
+      <input type="text" placeholder="아이디를 입력하세요" name="user_name" pattern="[A-Za-z0-9]+" required>
+      <div class="desc">아이디는 영문자와 숫자만 사용할 수 있습니다.</div>
+
+      <!-- 비밀번호 입력 필드 -->
+      <label for="password"><b>비밀번호</b></label>
+      <input type="password" placeholder="비밀번호를 입력하세요" name="password" pattern="(?=.*[a-zA-Z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,16}$" maxlength="16" required>
+      <div class="desc">비밀번호는 영문자, 숫자, 특수문자를 포함한 8~16자여야 합니다.</div>
+      
+      <!-- 로그인 버튼 및 로그인 상태 유지 체크박스 -->
+      <button type="submit" title="로그인">로그인</button>
+      <label style="font-size: 14px;">
+        <input type="checkbox" name="remember"> 로그인 상태 유지
+      </label>
+    </div>
+
+    <!-- 버튼 및 비밀번호 찾기 컨테이너 -->
+    <div class="container" style="background-color:#f1f1f1; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
+      <button type="reset" class="cancelbtn">취소</button>
+      <span class="psw">비밀번호를 잊으셨나요? <a href="#">여기를 클릭하세요</a></span>
+    </div>
+  </form>
+</body>
+</html>

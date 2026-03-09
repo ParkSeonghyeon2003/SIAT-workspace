@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+      window.document.body.innerHTML = "<ul>";
+      for (let p in window) {
+        window.document.body.innerHTML += `<li>${p}: ${window[p]}</li>`;
+      }
+      window.document.body.innerHTML += "</ul>";
+    </script>
+  </body>
+</html>

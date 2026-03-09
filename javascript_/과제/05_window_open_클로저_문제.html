@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>windows_open_closure_problem</title>
+    <script>
+      /*
+        IIFE 함수로 인해 closure 함수인 open_window(), close_window()가
+        객체 형태로 묶여 리턴되고, 이는 변수 windowController에 할당된다.
+        이로 인해 IIFE 함수의 지역 변수인 newWindow는 IIFE 함수가 종료된 후에도
+        메모리에 남아있어 closure 함수로 접근 가능하다.
+       */
+      const windowController = (function() {
+        let newWindow = null;
+
+        function open_window() {
+          const url = window.prompt(
+            "이동할 URL 주소를 입력해주세요",
+            "https://www.naver.com"
+          );
+
+          if (url) {
+            newWindow = window.open(url);
+          }
+        }
+
+        function close_window() {
+          if (newWindow && !newWindow.closed) {
+            newWindow.close();
+          } else {
+            alert("이미 창을 닫았습니다.");
+          }
+        }
+
+        return {open_window, close_window};
+      })();
+    </script>
+  </head>
+  <body>
+    <button onclick="windowController.open_window();">
+      새로운 창(탭 윈도우)을 엽니다.
+    </button>
+    <button onclick="windowController.close_window();">
+      연 창을 닫습니다.
+    </button>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>클로저</title>
+  </head>
+  <body>
+    <script>
+      function test(name) {
+        const output = 'Hello' + name + ' ... !';
+        return function() {
+          console.log(output);
+        }
+      }
+
+      const returnFunction = test('Park');
+      console.log(`returnFunction=${returnFunction}`);
+      console.log(`output=${output}`);
+      returnFunction();
+    </script>
+  </body>
+</html>

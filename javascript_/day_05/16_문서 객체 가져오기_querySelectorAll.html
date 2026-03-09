@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>INDEX</title>
+  </head>
+  <script>
+    window.onclick = function() {
+      const headers = document.querySelectorAll("h1");
+
+      console.log(Array.isArray(headers)); // false
+      console.log(headers.length); // 2
+
+      headers[0].innerHTML = "난 첫번째 h1입니다.<br>";
+      headers[1].innerHTML = "난 두번째 h1입니다.<br>";
+
+      headers.forEach((h, index) => {
+        h.innerHTML += `NodeList-headers[${index}]<hr>`;
+      });
+
+      window.onclick = null;
+    };
+  </script>
+  <body>
+    <h1>클릭해 보세요</h1>
+    <h1>클릭해 보세요</h1>
+  </body>
+</html>

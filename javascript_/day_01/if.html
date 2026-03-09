@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>if문</title>
+  </head>
+  <body>
+    <script>
+      let output = "";
+      let score = 75;
+
+      // if
+      if (score >= 60) {
+        output += "<p>if문 결과: 합격입니다.</p>";
+      }
+
+      // if-else
+      if (score >= 80) {
+        output += "<p>if-else문 결과: 우수한 성적입니다.</p>";
+      } else {
+        output += "<p>if-else문 결과: 좀 더 노력하세요.</p>";
+      }
+
+      // Truthy/Falsy
+      let input = "";
+      if (input) {
+        output += "<p>Truthy/Falsy 결과: 입력값이 있습니다.</p>";
+      } else {
+        output += "<p>Truthy/Falsy 결과: 입력 값이 없습니다.</p>";
+      }
+
+      document.body.innerHTML = output;
+    </script>
+  </body>
+</html>

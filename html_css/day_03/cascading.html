@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS 상속과 캐스케이딩 이해하기</title>
+  <style>
+    body {
+      background-color: lavender;
+    }
+
+    h3 {
+      color: red;
+      font-style: italic;
+    }
+    h3 {
+      color: blue;
+    }
+
+    p {
+      font-size: 20px;
+      color: grey;
+    }
+
+    strong {
+      color: midnightblue;
+      font-style: italic;
+      font-size: 30px;
+    }
+  </style>
+</head>
+<body>
+  <h3>스타일시트 이해하기 (이 제목은 blue입니다.)</h3>
+  <p>
+    이 영역은 부모 요소인 p 태그입니다.
+    <strong>이곳은 자식 요소인 strong 태그입니다.</strong>
+  </p>
+</body>
+</html>

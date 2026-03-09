@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>function - 함수</title>
+  </head>
+  <body>
+    <script>
+      // 함수 표현식으로 선언된 함수는 호이스팅이 되지 않음에 주의
+      // functionVar();
+
+      let functionVar = function() {
+        let output;
+        do {
+          output = prompt('숫자를 입력하세요', '숫자');
+        } while (!Number.isNaN(Number(output)));
+        alert(`입력한 숫자 = ${output}`);
+      };
+
+      console.log(`typeof(functionVar)=${typeof(functionVar)}\n${functionVar}`);
+      functionVar();
+    </script>
+  </body>
+</html>

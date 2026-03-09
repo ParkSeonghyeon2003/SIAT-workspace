@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>Document Element</title>
+    <script>
+      window.onload = function() {
+        let h1 = document.createElement('h1');
+        let textNode = document.createTextNode('Hello DOM');
+      
+        h1.appendChild(textNode);
+        document.body.appendChild(h1);
+      }
+
+      window.onclick = function() {
+        let img = document.createElement('img');
+        img.src = '../../img/penguins.jpg';
+        img.width = 300;
+        img.height = 330;
+
+        document.body.appendChild(img);
+      }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>예제 1 - 두 수의 합</title>
+  <script>
+    let first, second;
+
+    first = prompt("첫 번째 숫자를 입력하세요.");
+    first = Number(first);
+
+    second = prompt("두 번째 숫자를 입력하세요.");
+    second = Number(second);
+
+    let calc = (op) => {
+      return first+op+second+"="+eval(first+op+second);
+    }
+
+    console.log(calc("+"));
+    console.log(calc("-"));
+    console.log(calc("*"));
+    console.log(calc("/"));
+    console.log(calc("%"));
+    console.log(calc("**"));
+
+    // let result = first + second;
+    // console.log(first+" + "+second+" = "+result);
+
+    // result = first - second;
+    // console.log(first+" - "+second+" = "+result);
+
+    // result = first * second;
+    // console.log(first+" * "+second+" = "+result);
+
+    // result = first % second;
+    // console.log(first+" % "+second+" = "+result);
+
+    // result = first / second;
+    // console.log(first+" / "+second+" = "+result);
+
+    // result = first ** second;
+    // console.log(first+" ** "+second+" = "+result);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

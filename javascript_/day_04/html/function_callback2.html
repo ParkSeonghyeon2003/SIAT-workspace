@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>callback - 콜백</title>
+  </head>
+  <body>
+    <script>
+      function callArray(callback) {
+        const fruits = ['Apple', 'Pair', 'Banana'];
+        for (let i = 0; i < fruits.length; i++) {
+          callback(i, fruits[i]);
+        }
+      }
+
+      callArray(function(index, item) {
+        alert(`index=${index}, item=${item}`);
+      });
+    </script>
+  </body>
+</html>

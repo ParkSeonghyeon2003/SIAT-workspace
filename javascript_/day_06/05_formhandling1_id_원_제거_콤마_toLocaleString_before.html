@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>콤마 제거와 콤마 넣기</title>
+</head>
+<body>
+  <h1>콤마와 원 없애기 / 콤마 넣기</h1>
+  <h1>25,000,000원</h1>
+  <div id="output"></div>
+<script>
+  const output = document.getElementById("output");
+  const data = "25,000,000원";
+  let dataResult = data.replace(",", "");
+  output.innerHTML += `${data} => ${dataResult}<hr>`;
+
+  // 정규 표현식을 써보면!!!
+  dataResult = data.replace(/,|원/, "");
+  output.innerHTML += `${data} => ${dataResult}<hr>`;
+
+  // g 플래그를 이용해 global하게 적용해보자
+  dataResult = data.replace(/,|원/g, "");
+  output.innerHTML += `${data} => ${dataResult}<hr>`;
+
+  // '/'문자를 제거하려면 \를 앞에 붙여야 한다.
+  dataResult = "25/000/".replace(/\//g, "");
+  output.innerHTML += `25/000/ => ${dataResult}<hr>`;
+
+  // toLocaleString(): 콤마 포함한 숫자 문자열로 변환
+  const data2 = 25000000;
+  dataResult = data2.toLocaleString();
+  output.innerHTML += `${data2} => ${dataResult}<hr>`;
+
+  const data3 = "abAb";
+  dataResult = data3.replace(/a/g, "*");
+  output.innerHTML += `${data3} => ${dataResult}<hr>`;
+  
+  // i: 대소문자 구분 없이 적용하는 법
+  dataResult = data3.replace(/a/gi, "*");
+  output.innerHTML += `${data3} => ${dataResult}<hr>`;
+
+  // DOM에서 h1 텍스트 가져오기
+  const h1Text = document.querySelector("h1").textContent;
+  output.innerHTML += `첫 번째 h1 엘리먼트 내용 => ${h1Text}<hr>`;
+
+  // 두 번째 엘리먼트
+  const h1Text2 = document.querySelectorAll("h1")[1].textContent;
+  output.innerHTML += `두 번째 h1 엘리먼트 내용 => ${h1Text2}<hr>`;
+
+  dataResult = h1Text2.replace(/,|원/g, "");
+  output.innerHTML += `숫자만 추출 => ${dataResult}<hr>`;
+</script>
+</body>
+</html>

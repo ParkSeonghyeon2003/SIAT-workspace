@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>생성자 함수 - Constructor Function</title>
+  </head>
+  <body>
+    <script>
+      function Person(name, age) {
+        this.name = name;
+        this.age = age;
+        this.introduce = function() {
+          return `Name: ${this.name}, Age: ${this.age}`;
+        }
+      }
+
+      const p1 = new Person('홍길동', 25);
+      const p2 = new Person('이순신', 30);
+      console.log(p1.introduce());
+      console.log(p2.introduce());
+    </script>>
+  </body>
+</html>

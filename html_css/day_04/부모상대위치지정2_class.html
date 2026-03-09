@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CSS3 Property Basic</title>
+  <style>
+    h1 {
+      color: red;
+    }
+
+    body > div {
+      border: 3px solid black;
+      width: 400px;
+      height: 200px;
+      position: relative;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      border: 0;
+    }
+
+    div > .box {
+      background-color: red;
+      top: 10px;
+      left: 10px;
+      z-index: 2;
+    }
+
+    div > .box + .box {
+      background-color: green;
+      top: 50px;
+      left: 50px;
+      z-index: 1;
+    }
+
+    div > .box + .box + .box {
+      background-color: blue;
+      top: 90px;
+      left: 90px;
+      z-index: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>class="box"로 도전하기</h1>
+  <div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+  <h1>class="box"로 도전하기</h1>
+</body>
+
+</html>

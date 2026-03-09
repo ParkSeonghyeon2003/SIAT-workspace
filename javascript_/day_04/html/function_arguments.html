@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>function - 함수</title>
+  </head>
+  <body>
+    <script>
+      function getSum(a, b) {
+        console.log(`a=${a}, b=${b}`);
+
+        console.log(`typeof arguments : ${typeof arguments}`);
+
+        for (let i = 0; i < arguments.length; i++) {
+          console.log(`arguments[${i}]=${arguments[i]}`);
+        }
+      }
+
+      getSum(10, 20, 30, 40, 50);
+    </script>
+  </body>
+</html>

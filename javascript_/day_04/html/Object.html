@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>Object - 객체</title>
+  </head>
+  <body>
+    <script>
+      const person = new Object();
+
+      person["name"] = "박성현";
+      person.age = 24;
+      person.tall = 168;
+      person.blood_type = "B";
+      person.address = "경기도 파주시 운정5동";
+
+      // for in 순회
+      person.print = function () {
+        let output = "";
+        for (const p in this) {
+          output += `<p>person.${p} = ${this[p]}</p>`;
+        }
+        document.body.innerHTML = output;
+      };
+      person.print_better = function () {
+        let output = "";
+        for (const key in this) {
+          if (key.startsWith("print")) {
+            continue;
+          }
+          output += `<p>person.${key} = ${this[key]}</p>`;
+        }
+        document.body.innerHTML = output;
+      };
+
+      // for of 순회
+      person.print_values = function () {
+        let output = "";
+        for (const value of Object.values(this)) {
+          const value_str = String(value);
+          if (value_str.startsWith("function")) {
+            continue;
+          }
+          output += `<p>value = ${value_str}</p>`;
+        }
+        document.body.innerHTML = output;
+      };
+
+      // person.print();
+      // person.print_better();
+      person.print_values();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>학생 명단 입력 시스템</title>
+  <style>
+    body {
+      height: 100vh; /* vh = viewport height */
+    }
+
+    .flex-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 550px;
+    }
+
+    th,
+    td {
+      border: 1px solid #444;
+      padding: 10px;
+    }
+
+    th {
+      background-color: #35e;
+      color: white;
+    }
+
+    p {
+      color: #888;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    // 무한 반복
+    while (true) {
+      // 입력
+      const input = prompt("입력할 인원 수를 입력하세요. (2~9)");
+
+      // 검증
+      if (input === "") {
+        alert("값을 입력하세요.");
+        continue; // 입력 재시도
+      }
+      if (input === null) {
+        alert("입력이 취소되었습니다.");
+        break; // 프로그램 종료
+      }
+      const cnt_students = Number(input);
+      if (Number.isNaN(cnt_students) || cnt_students < 2 || cnt_students > 9) {
+        alert("2~9 사이의 숫자만 입력해야 합니다. 다시 입력해주세요.");
+        continue; // 입력 재시도.
+      }
+      
+      const arr_students = new Array();
+      for (let i = 0; i < cnt_students; i++) {
+        const name = prompt(`${i+1}번 째 학생 이름을 입력하세요`);
+        arr_students.push(name);
+      }
+
+      // 출력
+      document.body.innerHTML = "<h1>학생 정보 입력 → 표로 출력됩니다</h1>";
+      let tbody_str = "<tbody>";
+      for (let i = 0; i < cnt_students; i++) {
+        tbody_str += `
+          <tr>
+            <td>${i+1}</td>
+            <td>${arr_students[i]}</td>
+          </tr>
+        `;
+      }
+      tbody_str += "</tbody>";
+      
+      document.body.innerHTML += `
+        <table>
+          <thead>
+            <tr><th>번호</th><th>이름</th></tr>
+          </thead>
+          ${tbody_str}
+        </table>
+        <p>총 ${cnt_students}명이 저장됩니다.</p>
+      `;
+
+      break; // 프로그램 종료
+    }
+  </script>
+</body>
+
+</html>

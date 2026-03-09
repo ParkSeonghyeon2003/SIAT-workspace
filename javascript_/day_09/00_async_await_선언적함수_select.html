@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="UTF-8">
+<title>async + await + JSON 실습</title>
+<link href="css/ex0404_2.css" rel="stylesheet">
+<script src="js/ex0404_2.js" defer></script>
+</head>
+
+<body>
+<h2>async + await + JSON 실습</h2>
+<p>버튼을 클릭하면 users.json 파일을 비동기로 불러옵니다.</p>
+<!-- 도시 선택 추가 -->
+<select id="city">
+  <option value="all">전체</option>
+  <option value="Seoul">서울</option>
+  <option value="Busan">부산</option>
+  <option value="Incheon">인천</option>
+  <option value="Daegu">대구</option>
+</select>
+<div id="status">상태: 대기 중</div>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>이름</th>
+      <th>나이</th>
+      <th>도시</th>
+    </tr>
+  </thead>
+  <tbody id="tbody">
+    <tr>
+      <td colspan="4">아직 데이터가 없습니다.</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+
+</html>

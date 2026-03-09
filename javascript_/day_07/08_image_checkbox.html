@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>모든 체크박스 선택/헤제 (checked 속성 이용하기)</title>
+  </head>
+  <body>
+    <div>모든 체크박스 선택/해제 (checked 속성 이용하기)</div>
+    <hr>
+    <form>
+      <label><input type="checkbox" name="all" value="모두 선택/해제">ALL </label><br>
+      <label><input type="checkbox" name="icon" value="../../img/sharp.png">sharp </label>
+      <label><input type="checkbox" name="icon" value="../../img/music.png">music </label>
+      <label><input type="checkbox" name="icon" value="../../img/call.png">call </label>
+    </form>
+    <script>
+      // 엘리먼트 인스턴스화
+      const allEl = document.querySelector("input[name=all]");
+      const iconEls = document.querySelectorAll("input[name=icon]");
+
+      // 이벤트 핸들러 정의
+      function checkedLog(event) {
+        console.log(this.checked);
+      }
+      function changeAll(event) {
+        iconEls.forEach(el => {
+          el.checked = this.checked;
+        });
+      }
+
+      // 이벤트 리스너 등록
+      allEl.addEventListener("click", checkedLog);
+      allEl.addEventListener("click", changeAll);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>과제1. 마우스를 올리면 보인다!!</title>
+  <style>
+    span {
+      font-size: 20px;
+      font-weight: bold;
+      cursor: help;
+    }
+
+    p {
+      display: none;
+      width: 200px;
+      height: 200px;
+      border: 2px dotted black;
+      box-shadow: 5px 5px 20px gray;
+      background-color: lavender;
+    }
+
+    span:hover + p {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <span>여기에 마우스를 올리면</span>
+  <p>
+    이 블럭이 보입니다.
+  </p>
+</body>
+</html>

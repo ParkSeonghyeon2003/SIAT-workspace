@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>01-23(금) 과제 프로그램</title>
+  </head>
+  <body>
+    <script>
+      // 속성
+      let props_obj = {
+        name: '이름',
+        age: '나이',
+        ki: '키',
+        blood: '혈액형',
+        address: '주소'
+      }
+
+      // saram 객체 생성 및 반환
+      function inputSaram() {
+        const saram = {};
+        
+        // 입력
+        for (const prop in props_obj) {
+          let input = prompt(`${props_obj[prop]}을(를) 입력해주세요.`);
+          
+          // Number 형 변환
+          if (prop === 'age' || prop === 'ki') {
+            input = Number(input);
+          }
+          saram[prop] = input;
+        }
+
+        return saram;
+      }
+
+      // saram 객체 출력
+      function outputSaram(obj) {
+        let output_str = '';
+        for (const key in obj) {
+          output_str += `${props_obj[key]}: ${obj[key]}<br>`;
+        }
+        document.body.innerHTML = output_str;
+      }
+
+      const saram1 = inputSaram();
+      outputSaram(saram1);
+    </script>
+  </body>
+</html>

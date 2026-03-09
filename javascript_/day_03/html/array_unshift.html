@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>Array</title>
+  </head>
+  <body>
+    <script>
+      const fruits = ["Apple", "Banana", "Grape", "Strawberry"];
+      fruits.unshift("Kiwi");
+      let output = "";
+
+      for (let i = 0; i < fruits.length; i++) {
+        output += `${fruits[i]}<hr>`;
+      }
+
+      document.body.innerHTML = output;
+    </script>
+  </body>
+</html>

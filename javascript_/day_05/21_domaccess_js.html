@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+      window.onclick = function() {
+        const inputTag = document.getElementById("username");
+        const input = prompt("이름을 입력하세요.");
+        
+        inputTag.value = input;
+        inputTag.style.backgroundColor = "yellow";
+        inputTag.style.color = "red";
+        inputTag.style.width = "200px";
+        inputTag.style.height = "50px";
+        inputTag.style.fontSize = "30px";
+      };
+    </script>
+  </head>
+  <body>
+    이름 : <input id="username" type="text" value="사용자의 이름?">
+  </body>
+</html>

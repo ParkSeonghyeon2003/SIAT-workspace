@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>구구단 표 출력하기</title>
+  <style>
+    body {
+      height: 100vh; /* vh = viewport height */
+    }
+
+    .flex-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border: 1px solid lightgray;
+      padding: 5px 15px;
+    }
+
+    th {
+      background-color: lavender;
+    }
+  </style>
+</head>
+
+<body class="flex-container">
+  <script>
+    // 무한 반복
+    while (true) {
+      // 입력
+      const input_dan = prompt("출력할 단을 입력하세요 (2~9)");
+
+      // 검증
+      if (input_dan === "") {
+        alert("값을 입력하세요.");
+        continue; // 입력 재시도
+      }
+      if (input_dan === null) {
+        alert("입력이 취소되었습니다.");
+        break; // 프로그램 종료
+      }
+      const number_dan = Number(input_dan);
+      if (Number.isNaN(number_dan) || number_dan < 2 || number_dan > 9) {
+        alert("2~9 사이의 숫자만 입력해야 합니다. 다시 입력해주세요.");
+        continue; // 입력 재시도.
+      }
+      
+      // 출력
+      let tbody_str = "<tbody>";
+      for (let i = 1; i <= 9; i++) {
+        tbody_str += `<tr><td>${number_dan} x ${i} = ${number_dan * i}</tr></td>`;
+      }
+      tbody_str += "</tbody>";
+      
+      document.body.innerHTML = `
+        <table>
+          <thead>
+            <tr><th>${number_dan}단</th></tr>
+          </thead>
+          ${tbody_str}
+        </table>
+      `;
+
+      break; // 프로그램 종료
+    }
+  </script>
+</body>
+
+</html>

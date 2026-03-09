@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>for</title>
+</head>
+
+<body>
+  <script>
+    let output = "";
+    let output2 = "";
+    let sum = 0;
+    for (let i = 10; i >= 2; i -= 2) {
+      output += `${i}<hr>`;
+
+      if (i !== 10) {
+        output2 += " + ";
+      }
+      output2 += `${i}`;
+
+      sum += i;
+    }
+    output2 += ` = ${sum}입니다`;
+    document.body.innerHTML = output + output2;
+  </script>
+</body>
+
+</html>

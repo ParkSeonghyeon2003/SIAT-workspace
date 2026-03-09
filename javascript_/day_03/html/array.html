@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>Array</title>
+  </head>
+  <body>
+    <script>
+      const fruits = ["Apple", "Banana", "Grape", "Strawberry"];
+      console.log(typeof fruits);
+      console.log(fruits.length);
+      console.log(fruits[0]); // Apple
+      console.log(fruits[1]); // Banana
+      console.log(fruits[2]); // Grape
+      console.log(fruits[3]); // Strawberry
+      console.log(fruits[4]); // undefined
+
+      console.log(fruits);
+
+      for (let i = 0; i < fruits.length; i++) {
+        console.log(fruits[i]);
+      }
+      document.body.innerHTML = fruits;
+    </script>
+  </body>
+</html>

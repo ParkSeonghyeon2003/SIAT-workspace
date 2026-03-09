@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>Object - 객체</title>
+  </head>
+  <body>
+    <script>
+      const person = {
+        name: "박성현",
+        age: 24,
+        tall: 168,
+        blood_type: "B",
+        address: "경기도 파주시 운정5동",
+        print: function() {
+          let output = "";
+          for (const key in this) {
+            if (key === "print") {
+              continue;
+            }
+            output += `<p>person.${key} = ${this[key]}</p>`;
+          }
+          document.body.innerHTML = output;
+        }
+      };
+
+      person.print();
+
+    </script>
+  </body>
+</html>

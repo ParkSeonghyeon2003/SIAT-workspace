@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>문자열 검색</title>
+  </head>
+  <body>
+    <script>
+      let msg = "Hello JavaScript";
+
+      console.log(msg.indexOf("Java")); // 6
+      console.log(msg.indexOf("java")); // -1 (j가 아니라 J여야 일치)
+
+      console.log(msg.includes("Script")); // true
+      console.log(msg.includes("script")); // false (s가 아니라 S여야 일치)
+
+      msg = "abca";
+      console.log(msg.lastIndexOf("a")); // 3 (마지막으로 검색되는 위치)
+    </script>
+  </body>
+</html>

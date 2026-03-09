@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>this 사용</title>
+</head>
+
+<body>
+  <img src="/img/cherry.png">
+  <script>
+    const imgObject = document.querySelector("img");
+    imgObject.onclick = () => {
+      imgObject.src = "/img/messenger.png";
+      console.log(imgObject === imgObject);
+    }
+  </script>
+</body>
+
+</html>

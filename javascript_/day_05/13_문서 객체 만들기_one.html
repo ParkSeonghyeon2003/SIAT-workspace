@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>innerHTML</title>
+    <script>
+      window.onclick = function() {
+        const img = `<img src="../../img/penguins.jpg"
+                    width=300 height=330>`;
+
+        document.body.innerHTML += img;
+        window.onclick = null;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>클릭하면 펭귄이 나타나게 해주세요.</h1>
+  </body>
+</html>

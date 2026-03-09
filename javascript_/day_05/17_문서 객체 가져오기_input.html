@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>INDEX</title>
+    <style>
+      input:nth-child(1) {
+        color: green;
+        font-weight: bold;
+      }
+
+      input:nth-child(2) {
+        background-color: orange;
+        color: white;
+      }
+    </style>
+    <script>
+      window.onload = function() {
+        const inputs = document.querySelectorAll("input[name=age]");
+        const first = inputs[0];
+        const second = inputs[1];
+
+        first.value = "24살 입니다.";
+        second.focus();
+      };
+    </script>
+  </head>
+  <body>
+    <input type="text" name='age'>
+    <input type="text" name='age'>
+  </body>
+</html>

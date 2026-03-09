@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>인자가 더 많은 경우 (매개변수 < 인자)</title>
+  </head>
+  <body>
+    <script>
+      function getSum(first, second, ...args) {
+        console.log(`first = ${first}`);
+        console.log(`second = ${second}`);
+
+        for (a of args) {
+          console.log(a);
+        }
+      }
+
+      getSum(10, 20, 30, 40, 50);
+    </script>
+  </body>
+</html>

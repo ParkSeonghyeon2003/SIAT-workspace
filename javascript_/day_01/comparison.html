@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>비교 연산자(Comparison Operator)</title>
+  <script>
+    let a = 10;
+    let b = 5;
+    let c = "10";
+
+    console.log(typeof(a));
+    console.log(typeof(c));
+
+    result = (a == c); // "10" -> 10으로 타입 캐스팅
+    console.log(result); // true
+
+    result = (a === c); // false
+    console.log(result); // false
+
+    console.log(a != b); // true
+    console.log(a !== c); // true
+
+    console.log(a > b); // true
+    console.log(a < b); // false
+    console.log(a >= 10); // true
+    console.log(b <= 5); // true
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

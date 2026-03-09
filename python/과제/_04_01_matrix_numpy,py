@@ -1,0 +1,23 @@
+import numpy as np
+
+class Matrix:
+    def __init__(self, mats):
+        self.mats = mats
+    
+    def __add__(self, other):
+        if not isinstance(other, Matrix):
+            raise TypeError("행렬 끼리만 합을 해주세요.")
+        return Matrix((np.array(self.mats) + np.array(other.mats)).tolist())
+
+    def __repr__(self):
+        return "Matrix(\n  "+"\n  ".join(map(str, self.mats))+"\n)"
+
+m1 = Matrix([[1, 2], [3, 4]])
+m2 = Matrix([[5, 6], [7, 8]])
+
+# 동작 원리: m1 + m2 -> m1.__add__(m2) 호출
+result = m1 + m2
+
+print("Matrix 1:", m1)
+print("Matrix 2:", m2)
+print("결과 (m1 + m2):", result)

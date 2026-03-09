@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>let</title>
+  </head>
+  <body>
+    <script>
+      let a = "10"; // 전역 스코프
+      if (true) {
+        console.log(a); // 전역 변수 접근
+      }
+
+      if (true) {
+        let a = 20; // 블록 스코프에 동명이변(수) 선언
+        console.log(a); // 가까운 스코프(블록)을 접근
+      }
+
+      console.log(a); // 전역 변수 접근
+
+      if (true) {
+        a = 200; // 블록 안에서도 전역 변수 대입?
+      }
+      console.log(a); // 가능하다!
+    </script>
+  </body>
+</html>

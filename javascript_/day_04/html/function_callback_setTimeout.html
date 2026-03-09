@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>callback - 실제 사용 예</title>
+  </head>
+  <body>
+    <script>
+      console.log("setTimeout 앞 - 1");
+
+      // 3초(3000ms) 후에 인사말 출력
+      setTimeout(function() {
+        alert("안녕하세요! 3초가 지났습니다.");
+        console.log("setTimeout 안 - 2");
+      }, 3000);
+
+      console.log("setTimeout 뒤 - 3");
+    </script>
+  </body>
+</html>

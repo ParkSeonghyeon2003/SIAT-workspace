@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>test3</title>
+    <style>
+      h1{
+        color: red;
+      }
+    
+      @keyframes textColorAnimation {
+        0% { color: hsl(0, 100%, 50%); }
+        20% { color: hsl(60, 100%, 50%); }
+        40% { color: hsl(120, 100%, 50%); }
+        60% { color: hsl(180, 100%, 50%); }
+        80% { color: hsl(240, 100%, 50%); }
+        100% { color: hsl(360, 100%, 50%); }
+      }
+
+      div {
+        color: white;
+        font-family: "굴림";
+        text-align: center;
+        font-weight: bold;
+        padding: 10px;
+        font-size: 16px;
+        animation: textColorAnimation 5s infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>String 객체의 메소드 활용</h3>
+    <hr>
+    <script>
+      const reg = /^\d{6}-[1-4]\d{6}$/;
+      let input = "";
+      let isValid = false;
+
+      do {
+        input = prompt("주민번호를 입력해주세요.", "030325-1234567");
+        isValid = reg.test(input);
+        if(!isValid) {
+          alert("주민번호 형식이 맞지 않음");
+        }
+      } while (!isValid);
+
+      const color = ["pink","#565698"];
+      const message = ["여자", "남자"];
+      const gender = Number(input[7]) % 2;
+
+      document.body.innerHTML += `
+        <div>${input}은 ${message[gender]}입니다.</div>
+      `;
+      document.body.style.background = color[gender];
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>prototype</title>
+  </head>
+  <body>
+    <script>
+      function Person(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+
+      Person.prototype.ban = '최고반';
+      Person.prototype.introduce = function() {
+        return `Name: ${this.name}, Age: ${this.age}, Class: ${this.ban}`;
+      }
+
+      const p1 = new Person('홍길동', 25);
+      const p2 = new Person('이순신', 30);
+
+      console.log(p1.introduce());
+      console.log(p2.introduce());
+    </script>
+  </body>
+</html>

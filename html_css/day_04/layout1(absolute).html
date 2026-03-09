@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>위치/크기 지정 속성</title>
+  <style>
+    /*
+      position: absolute
+      가장 가까운 조상 중 position: static이 아닌 요소를 기준으로 배치.
+      그런 조상이 없으면 viewport의 왼상단(0,0)을 기준으로 좌표가 결정.
+     */
+
+    div {
+      position: absolute;
+      width: 100px; height: 100px;
+    }
+
+    #box1 {
+      background: red;
+      top: 20px;
+      left: 20px;
+    }
+    
+    #box2 {
+      background: blue;
+      top: 20px;
+      left: 140px;
+    }
+    
+    #box1:active, #box2:active {
+      right: 20px;
+      bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="box1"></div>
+  <div id="box2"></div>
+</body>
+</html>

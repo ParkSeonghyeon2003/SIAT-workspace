@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>Number</title>
+  </head>
+  <body>
+    <script>
+      console.log("Number()는 인자가 Number Type이 아니면\
+                    NaN을 반환합니다.");
+      console.log(Number("10"));
+      console.log(Number("10.5"));
+      console.log(Number("100px"));
+
+      console.log("Number()는 인자가 공백이 포함된 빈 문자열이면\
+                    0을 반환합니다.")
+      console.log(Number(""));
+      console.log(Number("    "));
+
+      console.log("Number.isNaN()은 인자가 NaN이면 true고\
+                    나머지 경우에는 false입니다.\
+                    (ex. String, Number 형이면 NaN 타입이 아니므로 false)");
+      console.log(Number.isNaN("a"));
+      console.log(Number.isNaN("1"));
+      console.log(Number.isNaN(1));
+      console.log(Number.isNaN(NaN));
+    </script>
+  </body>
+</html>

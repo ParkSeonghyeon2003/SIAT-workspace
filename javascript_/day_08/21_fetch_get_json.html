@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link href="css/ex0404_2.css" rel="stylesheet">
+</head>
+
+<body>
+  <h2>fetch + JSON 실습</h2>
+  <p>버튼을 클릭하면 users.json 파일을 비동기로 불러옵니다.</p>
+
+  <button id="btn">데이터 불러오기</button>
+  
+  <div id="status">상태: 대기중</div>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th><th>이름</th><th>나이</th><th>도시</th>
+      </tr>
+    </thead>
+    <tbody id="tbody">
+      <tr>
+        <td colspan="4">아직 데이터가 없습니다.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    const btn = document.getElementById("btn");
+    const tbody = document.getElementById("tbody");
+    const status = document.getElementById("status");
+
+    // 버튼 클릭 이벤트 -> fetch 실행
+    btn.addEventListener("click", () => {
+      // 답변을 할 때 클래스 속성 "success" 와 "error"를 제거합니다.
+      status.classList.remove("success", "error");
+      status.textContent = "상태: 데이터 불러오는 중...";
+
+      fetch("json/users.json")
+        .then(response => { // response는 서버가 돌려준 응답 전체를 담고 있는 객체
+          // 서버 응답 성공 여부 확인
+          if (!response.ok) {
+            throw new Error("HTTP 오류 " + response.status);
+          }
+          return response.json();
+        })
+        .then(data => {
+          tbody.innerHTML = "";
+
+          let output = "";
+          data.forEach(user => {
+            output += `<tr><td>${user.id}</td><td>${user.name}</td><td>${user.age}</td><td>${user.city}</td></tr>`;
+          });
+          tbody.innerHTML += output;
+
+          status.classList.add("success");
+          status.textContent = "상태: 데이터 불러오기 성공";
+        })
+        .catch (err => {
+          status.classList.add("error");
+          status.textContent = "상태: 오류 발생!";
+          tbody.innerHTML = `<tr><td colspan="4">에러 : ${err.message}</td></tr>`;
+        });
+    });
+  </script>
+</body>
+
+</html>

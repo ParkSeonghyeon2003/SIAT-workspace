@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>가상클래스(pseudo class) 선택지 - ':' 기호를 사용하는 선택자</title>
+  <style>
+    a {
+      text-decoration: none;
+    }
+    a:visited {
+      color: red;
+    }
+    a:link::after {
+      content: ' - ' attr(href);
+    }
+    a::after {
+      content: ' - href 없어요 - ';
+    }
+  </style>
+</head>
+<body>
+  <h1>링크 선택자</h1>
+  <h1><a>Nothing</a></h1>
+  <h1><a href="https://github.com">GitHub</a></h1>
+  <h1><a href="https://www.w3.org">W3C</a></h1>
+</body>
+</html>

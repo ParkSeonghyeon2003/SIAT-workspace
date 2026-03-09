@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>closure</title>
+  </head>
+  <body>
+    <script>
+      function createCounter() {
+        let count = 0;
+        return function() {
+          return ++count;
+        };
+      }
+
+      const returnFunction = createCounter();
+      console.log(returnFunction());
+      console.log(returnFunction());
+
+      const anotherFunction = createCounter();
+      console.log(anotherFunction());
+      console.log(anotherFunction());
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>INDEX</title>
+    <script>
+      let header1 = null;
+      let header2 = null;
+
+      window.onload = function init() {
+        header1 = document.querySelector("#header-1");
+        header2 = document.querySelector("#header-2");
+        header1.innerHTML = "클릭해 보세요";
+        header2.innerHTML = "클릭해 보세요";
+      };
+
+      window.onclick = function() {
+        header1.innerHTML = "with querySelector() : 햇살이";
+        header2.innerHTML = "with querySelector() : 좋아요";
+        window.onclick = null;
+      };
+    </script>
+  </head>
+  <body>
+    <h1 id="header-1"></h1>
+    <h1 id="header-2"></h1>
+  </body>
+</html>

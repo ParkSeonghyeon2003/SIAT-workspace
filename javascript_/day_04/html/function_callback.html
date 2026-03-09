@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>callback function - 콜백 함수</title>
+  </head>
+  <body>
+    <script>
+      function callTenTimes(callback) {
+        for (let i = 0; i < 9; i++) {
+          callback(i);
+        }
+      }
+
+      callTenTimes(function(index) {
+        alert("함수 호출 : " + index);
+      });
+
+    </script>
+  </body>
+</html>

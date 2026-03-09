@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Handling - id</title>
+  <link rel="stylesheet" href="css/ex0213_2.css">
+</head>
+
+<body>
+  <h2>서적 주문 양식</h2>
+  <form action="result.html" method="get">
+    <table>
+      <thead>
+        <tr>
+          <th>책 제목</th>
+          <th>가격</th>
+          <th>수량</th>
+          <th>합계</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>4차 산업</td>
+          <td class="price">30,000원</td>
+          <td><input id="book1" type="text" value="0" onclick="this.select();"></td>
+          <td><input id="book1Total" type="text" value="0" readonly>원</td>
+        </tr>
+        <tr>
+          <td>다이어트</td>
+          <td class="price">27,000원</td>
+          <td><input id="book2" type="text" value="0" onclick="this.select();"></td>
+          <td><input id="book2Total" type="text" value="0" readonly>원</td>
+        </tr>
+        <tr>
+          <td>윤식당</td>
+          <td class="price">25,000원</td>
+          <td><input id="book3" type="text" value="0" onclick="this.select();"></td>
+          <td><input id="book3Total" type="text" value="0" readonly>원</td>
+        </tr>
+        <tr>
+          <td>합계</td>
+          <td class="price">&nbsp;</td>
+          <td><input id="totalNumber" type="text" value="0" readonly></td>
+          <td><input id="totalPrice" type="text" value="0" readonly>원</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <input type="reset" value="초기화">
+    <input type="submit" value="제출">
+  </form>
+
+<script>  
+  // 가격 number화 하여 배열에 저장
+  const prices_arr = [];
+  document.querySelectorAll(".price").forEach(e => {
+    prices_arr.push(Number(e.textContent.replace(/,|원/g, "")));
+  });
+  
+  // Handler
+  function updateAll() {
+    const rowNum = prices_arr.length - 1; // 행 갯수
+    let totalCnt = 0; // 총 수량
+    let totalPrice = 0; // 총 합계
+
+    for (let i = 0; i < rowNum; i++) {
+      // id 속성 템플릿 리터럴
+      const bookId = `book${i+1}`;
+
+      // 요소 -> 객체
+      const inputEl = document.getElementById(bookId);
+      const rowTotalEl = document.getElementById(bookId+"Total");
+
+      // 수량
+      const v = inputEl.value.trim();
+      if (!/^\d+$/.test(v)) {
+        inputEl.value = "0";
+      } else {
+        inputEl.value = v;
+      }
+
+      const inputData = Number(inputEl.value);
+      
+      // 책 별 합계
+      const price = prices_arr[i];
+      const rowTotal = price * inputData;
+      rowTotalEl.value = rowTotal.toLocaleString();
+      
+      // 총 합계 누적
+      totalCnt += inputData;
+      totalPrice += rowTotal;
+    }
+    document.getElementById("totalNumber").value = totalCnt.toLocaleString();
+    document.getElementById("totalPrice").value = totalPrice.toLocaleString();
+  }
+
+  // Listener
+  document.querySelector("form").addEventListener("input", updateAll);
+</script>
+
+</body>
+</html>

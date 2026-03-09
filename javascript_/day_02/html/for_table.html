@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>개인정보 표 만들기</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        table-layout: fixed;
+        width: 300px;
+      }
+      th, td{
+        border: 1px solid black;
+        height: 35px;
+      }
+      th {
+        background-color: lightgray;
+      }
+      td {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      let num = Number(prompt("입력할 사람 수를 입력하세요."));
+      let tbody_str = "";
+      for (let i = 0; i < num; ++i) {
+        let name = prompt(`${i+1}번 째 사람 이름 입력`);
+        let age = prompt(`${i+1}번 째 사람 나이 입력`);
+        let blood_type = prompt(`${i+1}번 째 사람 혈액형 입력`);
+        tbody_str += `
+          <tr>
+            <td>${name}</td>
+            <td>${age}</td>
+            <td>${blood_type}</td>
+          </tr>
+        `;
+      }
+
+      document.body.innerHTML = `
+        <h3>입력된 개인정보</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>이름</th>
+              <th>나이</th>
+              <th>혈액형</th>
+            </tr>
+          </thead>
+          <tbody>
+          ${tbody_str}
+          </tbody>
+        </table>
+      `;
+    </script>
+  </body>
+</html>

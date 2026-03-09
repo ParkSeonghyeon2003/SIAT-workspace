@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>Using literal</title>
+    <style>
+      .card {
+        background-color: white;
+        border: 1px solid lightgray;
+        border-radius: 10px;
+        padding: 10px;
+      }
+
+      body {
+        background-color: lavender;
+      }
+      table {
+        border-collapse: collapse;
+        margin: 0 auto;
+      }
+      caption {
+        color: green;
+        font-size: 30px;
+        margin-bottom: 10px;
+      }
+      th,
+      td {
+        border: 1px solid gray;
+        padding: 5px 10px;
+        text-align: center;
+      }
+      th {
+        background: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      const person = {
+        name: "박성현",
+        age: 24,
+        tall: 168,
+        blood_type: "B",
+        address: "경기도 파주시 운정5동",
+        job: {
+          company: "SIAT",
+          loc: "서울특별시",
+          position: "훈련생"
+        },
+        print: function() {
+          let output = ``;
+          for (const key in this) {
+            if (key === "print") {
+              continue;
+            }
+            if (typeof person[key] === "object") {
+              for (const sub in this[key]) {
+                output +=  `<tr>
+                              <td>person.${key}.${sub}</td>
+                              <td>${this[key][sub]}</td>
+                            </tr>`;
+              }
+              continue;
+            }
+            output +=  `<tr>
+                          <td>person.${key}</td>
+                          <td>${this[key]}`;
+            switch (key) {
+              case "age":
+                output += "세";
+                break;
+              case "tall":
+                output += "cm";
+                break;
+              case "blood_type":
+                output += "형";
+            }
+            output += "</td></tr>";
+          }
+          document.body.innerHTML += `
+            <div class="card">
+              <table>
+                <caption>신상 정보</caption>
+                <thead>
+                  <tr>
+                    <th>항목 (키: Key)</th>
+                    <th>내용 (값: Value)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${output}
+                </tbody>
+              </table>
+            </div class="card">`;
+        }
+      };
+      person.print();
+    </script>
+  </body>
+</html>

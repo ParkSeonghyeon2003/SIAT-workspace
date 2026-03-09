@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>문자열 추출</title>
+  </head>
+  <body>
+    <script>
+      const text = "Hello JavaScript";
+
+      for (let i = 0; i < text.length; i++) {
+        console.log(`index=${i}, ${text[i]}`);
+      }
+
+      let result = text.slice(0, 5);
+      console.log(text);
+      console.log(result);
+      console.log(result.length);
+
+      result = text.slice(6); // end 생략 = 인덱스 6에서 끝까지
+      console.log(result);
+
+      for (let i = -1; i >= -text.length; i--) {
+        console.log(`index=${i}, ${text[text.length + i]}`);
+      }
+
+      console.log(text.slice(-6));
+      console.log(text.slice(-6, -2));
+
+      // substring은 기능은 동일하지만 다르게 동작하기도 함
+      // substring은 음수 인덱스를 지원하지 않으며
+      // start > end의 경우 slice는 빈 문자열을 반환하나
+      // substring은 end부터 start+1까지 슬라이싱해준다.
+      console.log(text.substring(6));
+      console.log(text.substring(6, 10));
+    </script>
+  </body>
+</html>
